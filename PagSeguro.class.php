@@ -111,11 +111,13 @@ class PagSeguro{
 		
 		curl_close($curl);
 		$xml_obj = simplexml_load_string($xml);
-		
+
+		/*
 		var_dump($xml);
 		echo "<br><br>";
 		var_dump($xml_obj);
 		echo "<br><br>";
+		*/
 		
 		if(count($xml_obj->error) > 0){
 			//Insira seu código de tratamento de erro, talvez seja útil enviar os códigos de erros.
@@ -123,7 +125,9 @@ class PagSeguro{
 			echo "Erro-> ".var_export($xml_obj->errors,true);
 			exit;
 		}
+		//echo 'Location: '.$this->url_redirect.$xml_obj->code;
 		header('Location: '.$this->url_redirect.$xml_obj->code);
+
 	}
 	
 	//RECEBE UMA NOTIFICAÇÃO DO PAGSEGURO
@@ -150,7 +154,6 @@ class PagSeguro{
 		
 		var_dump($transaction);
 		var_dump($transaction_obj);
-		echo "tá caindo aqui";
 		
 		return $transaction_obj;		
 	}
@@ -200,6 +203,7 @@ class PagSeguro{
 		$transaction_obj = simplexml_load_string($transaction);
 		if(count($transaction_obj -> error) > 0) {
 		   //Insira seu código avisando que o sistema está com problemas
+		   echo "APresnetou problemas";
 		   var_dump($transaction_obj);
 		}
 		//print_r($transaction_obj);
