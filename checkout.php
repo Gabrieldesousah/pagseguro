@@ -7,9 +7,11 @@ require_once("PagSeguro.class.php");
 $PagSeguro = new PagSeguro();
 	
 //EFETUAR PAGAMENTO	
-$venda = array("codigo"=>"18293",
-			   "valor"=>100.00,
-			   "descricao"=>"VENDA DE pirulito",
+
+//codigo é o  numero do produto
+$venda = array("codigo"=>"00001",
+			   "valor"=>150.00,
+			   "descricao"=>"Ingresso para o Lolla Palooooza",
 			   "nome"=>"felipe augusto",
 			   "email"=>"c71525297558843122225@sandbox.pagseguro.com.br",
 			   "telefone"=>"(62) 3297-5322",
