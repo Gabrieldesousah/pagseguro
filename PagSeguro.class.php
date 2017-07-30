@@ -1,4 +1,5 @@
 <?php
+
 class PagSeguro{
 	private $email         = "gabrieldesousa.h@gmail.com";
 	private $token_sandbox = "BD8BA847E5D74A62B9967E7A183A222A";
@@ -219,6 +220,14 @@ class PagSeguro{
 		else
 			return $this->statusCode[0];
 	}
+	/*public function getStatusText($code){
+		$code = (string) $code[0];
+		if($code>=1 && $code<=7)
+			return $this->statusCode[$code];
+		else
+			return $this->statusCode[0];
+	}
+	*/
 	
 }
 ?>
