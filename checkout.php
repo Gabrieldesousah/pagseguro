@@ -9,18 +9,18 @@ $PagSeguro = new PagSeguro();
 //EFETUAR PAGAMENTO	
 
 //codigo é o  numero do produto
-$venda = array("codigo"=>"00001",
-			   "valor"=>150.00,
-			   "descricao"=>"Ingresso para o Lolla Palooooza",
-			   "nome"=>"felipe augusto",
-			   "email"=>"c71525297558843122225@sandbox.pagseguro.com.br",
-			   "telefone"=>"(62) 3297-5322",
-			   "rua"=>"nao  importa",
-			   "numero"=>"3",
-			   "bairro"=>"importa nao",
-			   "cidade"=>"goianira",
-			   "estado"=>"GO", //2 LETRAS MAIÚSCULAS
-			   "cep"=>"74.453-440",
+$venda = array("codigo"			=>$_POST["codigo"],
+			   "valor"			=>$_POST["valor"],
+			   "descricao"		=>$_POST["descricao"],
+			   "nome"			=>$_POST["nome"],
+			   "email"			=>$_POST["email"],
+			   "telefone"		=>$_POST["telefone"],
+			   "rua"			=>$_POST["rua"],
+			   "numero"			=>$_POST["numero"],
+			   "bairro"			=>$_POST["bairro"],
+			   "cidade"			=>$_POST["cidade"],
+			   "estado"		 	=>$_POST["estado"], //2 LETRAS MAIÚSCULAS
+			   "cep"			=>$_POST["cep"],
 			   "codigo_pagseguro"=>"");
 			   
 $PagSeguro->executeCheckout($venda,"https://seumerito.com/pagseguro/".$_GET['codigo']);
